@@ -1,0 +1,46 @@
+[package]
+name = "testRust"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+diesel = { version = "2.0", features = ["postgres", "chrono"] }
+image = "0.25.0"
+dotenv = "0.15"
+chrono = "0.4.38"
+actix-files = "0.6.2"
+actix-web = { version = "4" , default-features = false,features = ["macros"] }
+serde_json = "1.0.94"
+serde = { version = "1.0.215", features = ["derive"] }
+actix-cors = "0.7.0"
+
+[build-dependencies]
+cc = "1.0"
+
+
+[[bin]]
+name = "test_redimension_image"
+path = "src/test_redimension_image.rs"
+
+[[bin]]
+name = "test_baisse_luminositer"
+path = "src/test_baisse_luminositer.rs"
+
+[[bin]]
+name = "test_rotation_image"
+path = "src/test_rotation_image.rs"
+
+[[bin]]
+name = "test_connexion_rust"
+path = "src/test_connexion_rust.rs"
+
+[[bin]]
+name = "test_tri_filtre"
+path = "src/test_tri_filtre.rs"
+
+[profile.dev]
+incremental = true
+
+[profile.release]
+incremental = true
